@@ -34,9 +34,8 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        $input = $request->all();
-        echo $input['email'];
-        echo $input['passwd'];
+        $this->validation($request);
+        return $request->all();
     }
 
     /**
@@ -82,5 +81,22 @@ class UsersController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function register(){
+        return view('users.register');
+    }
+
+    public function validation($request){
+        return $this->validate($request,[
+            'fname' => 'required|max:255',
+            'lname' => 'required|max:255',
+            'email' => 'required|max:255|email',
+            'password' => 'required|confirmed|max:255',
+        ]);
+    }
+
+    public function login(Request $request){
+        return $request->all();
     }
 }

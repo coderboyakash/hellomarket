@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Auth\Events\Login;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,8 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-Route::resource('/login','UsersController');
+Route::resource('/','UsersController');
+Route::get('/register','UsersController@register')->name('register');
+Route::post('/login','UsersController@login')->name('login');

@@ -13972,25 +13972,3 @@ a.text-dark:focus {
   clip: auto;
 }
 
-.login-box {
-  background: #f8f9fa;
-  width: 55%;
-}
-
-.btn {
-  background: rgba(112, 128, 144, 0.555) !important;
-  width: 18%;
-}
-
-.btn:focus,
-.btn:active,
-.form-control:focus,
-.form-control:active {
-  outline: none !important;
-  box-shadow: none;
-}
-
-.form-control {
-  border-radius: 3px;
-}
-
